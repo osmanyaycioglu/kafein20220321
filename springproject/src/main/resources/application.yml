@@ -1,0 +1,48 @@
+app:
+  hello:
+    prefix: Merhabalar Sayin
+  language: ex
+application:
+  info:
+    build: 220
+    desc: good application
+    hello:
+      prefix: Selamlar
+    index: 10
+    language: ex
+    person-list:
+    - height: 200
+      name: osman
+      surname: veli
+      weight: 95
+    - height: 180
+      name: ali
+      surname: veli
+      weight: 85
+    person-map:
+      osmanyay:
+        height: 200
+        name: osman
+        surname: yay
+        weight: 100
+    supported-language:
+    - Turkish
+    - English
+    - Spanish
+    - Japan
+    version: 1.0.0
+server:
+  port: 9090
+  http2:
+    enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      
