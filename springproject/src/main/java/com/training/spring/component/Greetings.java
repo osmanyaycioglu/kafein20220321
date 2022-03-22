@@ -42,6 +42,7 @@ public class Greetings implements BeanNameAware {
         System.out.println("Greetings : PostConstruct...");
     }
 
+
     @PreDestroy
     public void abcDestroy() {
         System.out.println("Greetings : PreDestroy...");

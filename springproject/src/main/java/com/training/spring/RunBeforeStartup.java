@@ -1,5 +1,7 @@
 package com.training.spring;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -20,13 +22,25 @@ public class RunBeforeStartup implements ApplicationRunner {
 
     @Autowired
     @Language("dynamic")
-    private IHello  hello1;
+    private IHello       hello1;
 
     @Autowired
-    private AnyBean anyBean;
+    private List<IHello> hellos;
+
+    @Autowired
+    private AnyBean      anyBean;
 
     @Override
     public void run(final ApplicationArguments argsParam) throws Exception {
+        System.out.println("------------------------0-------------------------------");
+        for (IHello iHelloLoc : this.hellos) {
+            System.out.println("IHello : "
+                               + iHelloLoc.getClass()
+                                          .getName());
+        }
+        System.out.println("------------------------0-------------------------------");
+
+
         System.out.println("**** Çalıştım : " + this.hello1.sayHello("mehmet"));
         System.out.println(this.anyBean.process("osman"));
     }

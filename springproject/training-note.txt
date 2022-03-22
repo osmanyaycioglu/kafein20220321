@@ -1,0 +1,34 @@
+- Spring Temelleri
+	- ApplicationRunner interface i spring core açılmadan önce çalışır
+	- Scheduling @EnableSchedule @Schedule
+	- Component scan için başka paketler nasıl aranır.
+	- EAGER LAZY spring bean
+	- Injection tipleri
+	- Qualifier
+	- Meta Qualifier
+	- Annotation oluşturma
+	- @Primary
+	- Interface olarak injection
+	- Core configuration spring beani
+		- @Configuration
+		- @PropertySource
+		- @Import other configuration
+		- @Bean ile spring bean yaratma
+	- @Value ile value injection
+	- Core bean injection
+		- Environment
+		- ApplicationContext
+	- Bir bean i application.properties e bind
+		- @ConfigurationProperties
+		- Sub Object, List, Map bindingi
+	- Actuator
+		- Bean
+		- Env
+		- Health
+			- Desc açılımı
+			- Register
+	- Spring core scopelerı
+	- Life cycle annotations
+		- @PostConstruct
+		- @PreDestroy
+	
