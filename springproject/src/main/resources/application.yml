@@ -7,7 +7,7 @@ application:
     build: 220
     desc: good application
     hello:
-      prefix: Selamlar
+      prefix: Koniciva
     index: 10
     language: ex
     person-list:
@@ -45,4 +45,10 @@ management:
     health:
       show-details: always
       show-components: always
- 
+spring:
+  profiles:
+    default: eng
+  task:
+    scheduling:
+      pool:
+        size: 5

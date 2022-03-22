@@ -3,29 +3,31 @@ package com.training.spring.component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("my-greeting-bean")
-public class Greetings implements BeanNameAware {
+public class Greetings {
 
     //Field Injection
     @Autowired
+    @Language("english")
     private Hello        hello3;
 
     private final IHello hello;
 
-    private Hello        hello2;
+
+    private Hello hello2;
 
     //@Autowired
     private final EagerLazyTest eagerLazyTest;
 
 
     //Constructor Injection
-    // @Autowired
-    public Greetings(@Language("english") final IHello helloParam,
-                     final EagerLazyTest eagerLazyTestParam) {
+    @Autowired
+    public Greetings(final EagerLazyTest eagerLazyTestParam,
+                     @Language("english") final IHello helloParam) {
         super();
         this.hello = helloParam;
         this.eagerLazyTest = eagerLazyTestParam;
@@ -33,7 +35,7 @@ public class Greetings implements BeanNameAware {
 
     //Method Injection
     @Autowired
-    public void abcWire(final Hello helloParam) {
+    public void abcWire(@Qualifier("engHello") final Hello helloParam) {
         this.hello2 = helloParam;
     }
 
@@ -53,9 +55,5 @@ public class Greetings implements BeanNameAware {
         return this.hello.sayHello(name);
     }
 
-    @Override
-    public void setBeanName(final String nameParam) {
-        System.out.println("Greetings bean name : " + nameParam);
-    }
 
 }
