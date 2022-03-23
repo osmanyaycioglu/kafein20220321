@@ -8,6 +8,7 @@ public class Person {
     private String  surname;
     private Integer height;
     private Integer weight;
+    private String  password;
 
     public String getName() {
         return this.name;
@@ -52,6 +53,14 @@ public class Person {
                + ", weight="
                + this.weight
                + "]";
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(final String passwordParam) {
+        this.password = passwordParam;
     }
 
 

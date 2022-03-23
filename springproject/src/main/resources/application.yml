@@ -35,6 +35,11 @@ server:
   port: 9090
   http2:
     enabled: false
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: true
+    include-stacktrace: always
 management:
   endpoints:
     web:
