@@ -10,7 +10,7 @@ public class ErrorObj {
     private int            errorCode;
 
 
-    public static void main(final String[] args) {
+    public static void main2(final String[] args) {
         ErrorObj addSubErrorLoc = ErrorObj.newInstance()
                                           .setMessage("validation error")
                                           .setErrorCode(100)
