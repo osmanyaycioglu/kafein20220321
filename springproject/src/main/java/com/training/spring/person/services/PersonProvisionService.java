@@ -17,4 +17,9 @@ public class PersonProvisionService {
         return "OK";
     }
 
+    public String update(final Person personParam) {
+        this.personDataManager.update(personParam);
+        return "OK";
+    }
+
 }

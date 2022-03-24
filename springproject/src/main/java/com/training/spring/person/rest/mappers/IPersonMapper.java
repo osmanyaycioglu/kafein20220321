@@ -6,7 +6,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import com.training.spring.models.Person;
+import com.training.spring.models.Storage;
 import com.training.spring.person.rest.models.PersonRest;
+import com.training.spring.person.rest.models.StorageRest;
 
 @Mapper
 public interface IPersonMapper {
@@ -22,5 +24,8 @@ public interface IPersonMapper {
 
     List<PersonRest> fromPersons(List<Person> personParam);
 
+    Storage toStorage(StorageRest storageRestParam);
+
+    StorageRest fromStorage(Storage storageParam);
 
 }
