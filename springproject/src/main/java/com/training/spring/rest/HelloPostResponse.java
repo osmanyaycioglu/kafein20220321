@@ -1,6 +1,6 @@
 package com.training.spring.rest;
 
-import com.training.spring.core.confprop.Person;
+import com.training.spring.models.Person;
 
 public class HelloPostResponse {
 

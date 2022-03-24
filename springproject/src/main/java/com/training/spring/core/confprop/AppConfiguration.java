@@ -7,6 +7,8 @@ import java.util.Map;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import com.training.spring.models.Person;
+
 @Component
 @ConfigurationProperties(prefix = "application.info")
 public class AppConfiguration {

@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Service;
 
-import com.training.spring.core.confprop.Person;
+import com.training.spring.models.Person;
 
 @Service
 public class PersonManager {

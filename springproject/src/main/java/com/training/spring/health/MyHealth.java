@@ -5,7 +5,7 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.boot.actuate.health.Status;
 import org.springframework.stereotype.Component;
 
-import com.training.spring.core.confprop.Person;
+import com.training.spring.models.Person;
 
 @Component
 public class MyHealth implements HealthIndicator {

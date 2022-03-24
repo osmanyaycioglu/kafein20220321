@@ -2,6 +2,7 @@ package com.training.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.training.spring.component.Greetings;
@@ -13,6 +14,10 @@ import com.training.spring.component.Greetings;
 //})
 @EnableScheduling
 //@Import(KafeinConfig.class)
+@EntityScan(basePackages = {
+                             "com.training.spring",
+                             "com.kafein.spring"
+})
 public class SpringprojectApplication {
 
     @Autowired

@@ -5,7 +5,7 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.training.spring.core.confprop.Person;
+import com.training.spring.models.Person;
 import com.training.spring.person.rest.models.PersonRest;
 
 @Mapper

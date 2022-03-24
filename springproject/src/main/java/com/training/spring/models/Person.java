@@ -1,9 +1,26 @@
-package com.training.spring.core.confprop;
+package com.training.spring.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
+@Entity
+// @SequenceGenerator(initialValue = 10, name = "xyzSeq", allocationSize = 1, sequenceName = "oracleSequence1")
+@TableGenerator(name = "xyzTable",
+                initialValue = 10,
+                allocationSize = 100,
+                table = "id_gen",
+                pkColumnName = "id_name",
+                pkColumnValue = "xyz",
+                valueColumnName = "id_value")
 public class Person {
 
-
+    @Id
+    // @GeneratedValue(generator = "xyzSeq", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "xyzTable", strategy = GenerationType.TABLE)
+    private Long    personId;
     private String  name;
     private String  surname;
     private Integer height;
@@ -61,6 +78,14 @@ public class Person {
 
     public void setPassword(final String passwordParam) {
         this.password = passwordParam;
+    }
+
+    public Long getPersonId() {
+        return this.personId;
+    }
+
+    public void setPersonId(final Long personIdParam) {
+        this.personId = personIdParam;
     }
 
 

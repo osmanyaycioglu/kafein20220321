@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.training.spring.core.confprop.Person;
+import com.training.spring.models.Person;
 
 // @Controller // MVC demek Controller -> View , Method String dönerse Hello.jsp render olur ve client a döner
 // @ResponseBody
