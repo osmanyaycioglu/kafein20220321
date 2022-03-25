@@ -30,7 +30,8 @@ public class PersonProvisionController {
         //            throw new IllegalArgumentException("name boş olamaz");
         //        }
 
-        return this.pps.add(IPersonMapper.personMapper.toPerson(person));
+        return this.pps.add(IPersonMapper.personMapper.toPerson(person,
+                                                                IPersonMapper.personMapper.toPersonCredential(person)));
     }
 
     @GetMapping("/deactivate")

@@ -20,7 +20,8 @@ public class PersonDataManagementController {
 
     @PostMapping("/update")
     public String update(@RequestBody final PersonRest person) {
-        return this.pps.update(IPersonMapper.personMapper.toPerson(person));
+        return this.pps.update(IPersonMapper.personMapper.toPerson(person,
+                                                                   IPersonMapper.personMapper.toPersonCredential(person)));
     }
 
 }

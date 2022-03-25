@@ -33,6 +33,8 @@ public class PersonRest {
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
              message = "password min 8 karakter bir sayı bir büyük karakter bir özel karakter barındırmalı")
     private String      password;
+    @NotEmpty
+    private String      username;
 
     @NotNull
     private StorageRest storage;
@@ -96,6 +98,14 @@ public class PersonRest {
 
     public void setStorage(final StorageRest storageParam) {
         this.storage = storageParam;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(final String usernameParam) {
+        this.username = usernameParam;
     }
 
 
