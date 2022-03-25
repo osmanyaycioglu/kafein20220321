@@ -71,3 +71,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
+  security:
+    user:
+      name: osman
+      password: 123456
+      roles:
+      - USER

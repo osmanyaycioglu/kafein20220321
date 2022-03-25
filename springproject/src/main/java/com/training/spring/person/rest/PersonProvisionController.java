@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,7 @@ public class PersonProvisionController {
     }
 
     @GetMapping("/activate")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public String activate(@NotNull @RequestParam("perid") final Long personId) {
         return "OK";
     }
