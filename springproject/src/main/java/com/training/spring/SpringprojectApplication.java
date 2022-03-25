@@ -3,6 +3,7 @@ package com.training.spring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.training.spring.component.Greetings;
@@ -20,6 +21,7 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
                              "com.kafein.spring"
 })
 @EnableEncryptableProperties
+@EnableAspectJAutoProxy
 public class SpringprojectApplication {
 
     @Autowired

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.training.spring.aop.Delta;
 import com.training.spring.person.rest.mappers.IPersonMapper;
 import com.training.spring.person.rest.models.PersonRest;
 import com.training.spring.person.services.PersonProvisionService;
@@ -26,6 +27,7 @@ public class PersonProvisionController {
     private PersonProvisionService pps;
 
     @PostMapping("/add")
+    @Delta
     public String add(@Validated @RequestBody final PersonRest person) {
         //        if (person.getName() == null) {
         //            throw new IllegalArgumentException("name boş olamaz");
@@ -42,6 +44,7 @@ public class PersonProvisionController {
 
     @GetMapping("/activate")
     @PreAuthorize("hasAnyRole('ADMIN')")
+    @Delta
     public String activate(@NotNull @RequestParam("perid") final Long personId) {
         return "OK";
     }
