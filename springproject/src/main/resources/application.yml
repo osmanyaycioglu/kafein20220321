@@ -60,8 +60,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     password: ''
-    url: jdbc:mysql://localhost/test?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-    username: root
+    url: ENC(mdN63nFAcl360z+gQykQSbGX+8mpeEzTIQ/YEE1hd6BGXB+sIHm4xBsDuKQqK9ypcdsYu0QsOQR7Qu8SiIMILQWCUIy2UTu2yoQLzjlselX/oY4mi3PsFDG7xR3AFlTdkGwNNXYrk0KIne3LLTKMdaBBnlaFyDM1NUsg7aFILvA=)
+    username: ENC(buf7D1/YHT+ezd9305kRJDyzepMoOfHfOsHPMPo3Y/6xtrQuQYEibi/z03bS9RrL)
   jpa:
     database: MYSQL
     database-platform: org.hibernate.dialect.MySQL5Dialect

@@ -2,11 +2,9 @@ package com.training.spring.person.services;
 
 import javax.persistence.EntityManager;
 
-import org.springframework.stereotype.Service;
-
 import com.training.spring.models.Person;
 
-@Service
+
 public class PersonProvisionServicProxy extends PersonProvisionService {
 
 

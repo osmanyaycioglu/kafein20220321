@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.training.spring.component.Greetings;
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 @SpringBootApplication
 //@SpringBootApplication(scanBasePackages = {
@@ -18,6 +19,7 @@ import com.training.spring.component.Greetings;
                              "com.training.spring",
                              "com.kafein.spring"
 })
+@EnableEncryptableProperties
 public class SpringprojectApplication {
 
     @Autowired

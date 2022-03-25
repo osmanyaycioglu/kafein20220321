@@ -15,9 +15,11 @@ public class PersonProvisionService {
     @Autowired
     private PersonDataManager personDataManager;
 
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.SERIALIZABLE)
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED)
     public String add(final Person personParam) {
-        this.personDataManager.insert(personParam);
+        Person insertLoc = this.personDataManager.insert(personParam);
+        insertLoc.getPersonCredential()
+                 .setPersonId(insertLoc.getPersonId());
         this.personDataManager.insertCredential(personParam);
         return "OK";
     }

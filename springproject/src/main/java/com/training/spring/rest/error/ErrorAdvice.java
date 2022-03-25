@@ -33,11 +33,12 @@ public class ErrorAdvice {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorObj> handleException(final Exception exp) {
+        exp.printStackTrace();
         if (exp instanceof NullPointerException) {
-            ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
-                          .body(ErrorObj.newInstance()
-                                        .setMessage(exp.getMessage())
-                                        .setErrorCode(5001));
+            return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
+                                 .body(ErrorObj.newInstance()
+                                               .setMessage(exp.getMessage())
+                                               .setErrorCode(5001));
         }
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                              .body(ErrorObj.newInstance()

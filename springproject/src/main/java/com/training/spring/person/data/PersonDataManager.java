@@ -18,11 +18,12 @@ public class PersonDataManager {
     @Autowired
     private IPersonDao           personDao;
 
+    @Autowired
     private IPersonCredentialDao personCredentialDao;
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public void insert(final Person personParam) {
-        this.personDao.save(personParam);
+    public Person insert(final Person personParam) {
+        return this.personDao.save(personParam);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
